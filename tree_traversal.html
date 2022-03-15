@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class node {
+            constructor(key){
+                this.key = key;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class BinarySearchTree
+        {             
+             constructor()
+             {
+               this.root = null;
+              }
+       
+        preorder(node)
+       {
+     
+         if (node === null) {
+              return ;
+        }
+        else {
+           console.log(node.data);
+           this.preorder(node.left);
+           this.preorder(node.right);
+        }
+    }
+ }
+    </script>
+    <script>
+        // iterative
+        class Node
+{
+    constructor(key)
+    {
+        this.key = key;
+        this.left = null;
+        this.right = null;
+    }
+}
+ 
+    let root;
+
+function preorderiterative(node)
+{
+    if (node === null)
+    {
+        return;
+    }
+ 
+    let st = [];
+
+    let curr = node;
+ 
+    while (curr != null || st.length > 0)
+    {
+         
+        while (curr != null)
+        {
+            document.write(curr.data + " ");
+ 
+            if (curr.right != null)
+                st.push(curr.right);
+ 
+            curr = curr.left;
+        }
+ 
+        if (st.length > 0)
+        {
+            curr = st.pop();
+        }
+    }
+}
+ 
+function preorderIterative()
+{
+    preorderiterative(root);
+}
+ 
+// main code for execution 
+root = new Node(10);
+root.left = new Node(20);
+root.right = new Node(30);
+root.left.left = new Node(40);
+root.left.left.left = new Node(70);
+root.left.right = new Node(50);
+root.right.left = new Node(60);
+root.left.left.right = new Node(80);
+  
+preorderIterative();
+ 
+</script>
+   
+</body>
+</html>
